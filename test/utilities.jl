@@ -163,7 +163,8 @@ end
     end
 
     import Documenter.Documents: Document, Page, Globals
-    let page = Page("source", "build", [], IdDict{Any,Any}(), Globals()), doc = Document()
+    import Documenter.Utilities: Markdown2
+    let page = Page("source", "build", [], IdDict{Any,Any}(), Globals(), Markdown2.MD()), doc = Document()
         code = """
         x += 3
         γγγ_γγγ

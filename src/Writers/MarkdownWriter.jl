@@ -26,7 +26,7 @@ mdext(f) = string(splitext(f)[1], ".md")
 function render(doc::Documents.Document, settings::Markdown=Markdown())
     copy_assets(doc)
     mime = MIME"text/plain"()
-    for (src, page) in doc.internal.pages
+    for (src, page) in doc.blueprint.pages
         open(mdext(page.build), "w") do io
             for elem in page.elements
                 node = page.mapping[elem]
